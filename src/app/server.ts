@@ -4,7 +4,9 @@ import { Express } from 'express-serve-static-core'
 import { graphqlHTTP } from 'express-graphql'
 import { buildSchema } from 'graphql'
 
-// Construct a schema, using GraphQL schema language
+/**
+ * Construct a schema, using GraphQL schema language
+ */
 var schema = buildSchema(`
   type Query {
     quoteOfTheDay: String
@@ -13,7 +15,9 @@ var schema = buildSchema(`
   }
 `)
 
-// The root provides a resolver function for each API endpoint
+/**
+ *  The root provides a resolver function for each API endpoint
+ */
 var root = {
   quoteOfTheDay: () => {
     return Math.random() < 0.5 ? 'Take it easy' : 'Salvation lies within'
